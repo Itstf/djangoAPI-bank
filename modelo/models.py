@@ -1,6 +1,16 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
+class Usuario(models.Model):
+    nomeUsuario = models.CharField(max_length=255)
+    emailUsuario = models.EmailField(unique=True)
+    senha = models.CharField(max_length= 15)
+    bloqueio_acesso = models.BooleanField()
+    
+    def __str__(self):
+        return self.nomeUsuario
+
 class Cliente(models.Model):
     nome = models.CharField(max_length=255)
     cpf = models.CharField(max_length=11)

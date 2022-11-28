@@ -1,6 +1,12 @@
 from rest_framework import serializers
 
-from modelo.models import Cliente, Conta, Cartao, Imagens, Movimentacoes, Emprestimo, PagamentoEmprestimos, Extrato
+from modelo.models import Usuario, Cliente, Conta, Cartao, Imagens, Movimentacoes, Emprestimo, PagamentoEmprestimos, Extrato
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ['id','nomeUsuario','emailUsuario','senha','bloqueio_acesso']
+
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:

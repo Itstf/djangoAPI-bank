@@ -1,6 +1,10 @@
-from .models import Cliente, Conta, Cartao, Imagens, Movimentacoes, Emprestimo, PagamentoEmprestimos, Extrato
-from .serializer import ClienteSerializer, ContaSerializer, CartaoSerializer, ImagensSerializer, MovimentacoesSerializer, EmprestimoSerializer, PagamentoEmprestimosSerializer, ExtratoSerializer
+from .models import Usuario, Cliente, Conta, Cartao, Imagens, Movimentacoes, Emprestimo, PagamentoEmprestimos, Extrato
+from .serializer import UserSerializer, ClienteSerializer, ContaSerializer, CartaoSerializer, ImagensSerializer, MovimentacoesSerializer, EmprestimoSerializer, PagamentoEmprestimosSerializer, ExtratoSerializer
 from rest_framework import viewsets
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UserSerializer
 
 class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
