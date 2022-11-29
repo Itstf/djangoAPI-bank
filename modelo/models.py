@@ -27,6 +27,8 @@ class Conta(models.Model):
     ]
     tipo = models.CharField(max_length=1, choices=TIPOS_CONTA, default=CORRENTE)
     saldo = models.DecimalField(max_digits=9, decimal_places=2)
+    name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
 
 class Cartao(models.Model):
     DEBITO = 'D'

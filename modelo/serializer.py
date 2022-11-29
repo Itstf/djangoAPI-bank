@@ -17,7 +17,7 @@ class ClienteSerializer(serializers.ModelSerializer):
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
-        fields = ['id', 'cliente', 'agencia', 'tipo', 'saldo']
+        fields = ['id', 'cliente', 'agencia', 'tipo', 'saldo', 'name', 'email']
 
 
 class CartaoSerializer(serializers.ModelSerializer):
