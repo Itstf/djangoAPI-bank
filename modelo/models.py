@@ -12,13 +12,8 @@ class Usuario(models.Model):
         return self.nomeUsuario
 
 class Cliente(models.Model):
-    nome = models.CharField(max_length=255)
-    cpf = models.CharField(max_length=11)
-    data_nascimento = models.DateField()
     email = models.EmailField(unique=True)
-    login = models.CharField(max_length=255)
-    foto = models.ImageField()
-    data_cadastro = models.DateField()
+    senhaLogin = models.CharField(max_length= 15)
 
 class Conta(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)

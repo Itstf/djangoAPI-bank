@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['id', 'nome', 'cpf', 'data_nascimento', 'email', 'login', 'foto', 'data_cadastro']
+        fields = ['id', 'email', 'senhaLogin']
 
 
 class ContaSerializer(serializers.ModelSerializer):
