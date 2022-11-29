@@ -17,7 +17,6 @@ class Cliente(models.Model):
 
 class Conta(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
-    numeroConta = models.CharField(max_length=50)
     agencia = models.CharField(max_length=50)
     CORRENTE = 'C'
     POUPANCA = 'P'
